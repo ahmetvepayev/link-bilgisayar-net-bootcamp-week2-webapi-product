@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using Week2.Api.DataAccess.Concrete;
 using Week2.Api.Utilities.DataGenerators;
 using Week2.Api.Utilities.Extensions;
+using Week2.Api.Services.Abstract;
+using Week2.Api.Services.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,10 +14,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Dependency Injection
-builder.Services.AddServiceAndRepository();
 // Use Ef Core InMemory Db
 builder.Services.AddDbContext<ApiDbContext>(options => options.UseInMemoryDatabase(databaseName: "ApiDB"));
+// Dependency Injection
+builder.Services.AddServiceAndRepository();
 
 
 var app = builder.Build();

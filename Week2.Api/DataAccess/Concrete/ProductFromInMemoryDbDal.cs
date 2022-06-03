@@ -7,7 +7,7 @@ namespace Week2.Api.DataAccess.Concrete;
 
 public class ProductFromInMemoryDbDal : EntityEfCoreInMemoryRepositoryBase<Product>, IProductDal
 {
-    public ProductFromInMemoryDbDal(DbContext context)
+    public ProductFromInMemoryDbDal(ApiDbContext context)
     {
         _context = context;
     }
