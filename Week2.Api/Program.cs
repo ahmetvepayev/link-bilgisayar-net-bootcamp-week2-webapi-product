@@ -1,3 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using Week2.Api.DataAccess.Concrete;
+using Week2.Api.Utilities.DataGenerators;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,7 +11,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Use Ef Core InMemory Db
+builder.Services.AddDbContext<ApiDbContext>(options => options.UseInMemoryDatabase(databaseName: "ApiDB"));
+
 var app = builder.Build();
+
+// Initalize InMemory Db with static Product data
+app.GenerateProducts();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
