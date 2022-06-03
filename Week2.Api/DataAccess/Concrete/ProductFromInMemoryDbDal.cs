@@ -11,4 +11,9 @@ public class ProductFromInMemoryDbDal : EntityEfCoreInMemoryRepositoryBase<Produ
     {
         _context = context;
     }
+
+    public Product GetById(int id)
+    {
+        return _context.Set<Product>().FirstOrDefault(p => p.Id == id);
+    }
 }
