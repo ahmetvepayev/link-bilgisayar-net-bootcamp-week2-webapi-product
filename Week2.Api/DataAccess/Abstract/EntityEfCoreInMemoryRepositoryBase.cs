@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using Week2.Api.DataAccess.Abstract;
+using Week2.Api.Entities.Abstract;
 using Week2.Api.DataAccess.Concrete;
 
-namespace Week2.Api.Entities.Abstract;
+namespace Week2.Api.DataAccess.Abstract;
 
 public abstract class EntityEfCoreInMemoryRepositoryBase<TEntity> : IEntityRepository<TEntity>
     where TEntity : class, IEntity, new()

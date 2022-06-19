@@ -1,7 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Week2.Api.DataAccess.Abstract; // For testing, delete later
-using Week2.Api.DataAccess.Concrete; // For testing, delete later
 using Week2.Api.Entities.Concrete;
 using Week2.Api.Services.Abstract;
 

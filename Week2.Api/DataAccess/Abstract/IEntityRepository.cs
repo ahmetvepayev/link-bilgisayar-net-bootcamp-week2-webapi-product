@@ -1,4 +1,3 @@
-using System.Linq.Expressions;
 using Week2.Api.Entities.Abstract;
 
 namespace Week2.Api.DataAccess.Abstract;
